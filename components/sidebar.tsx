@@ -42,14 +42,16 @@ export function Sidebar() {
     >
       {/* Logo */}
       <div className="flex items-center gap-3 p-6 border-b border-border">
-        <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-          <FileText className="w-4 h-4 text-white" />
-        </div>
-        {!collapsed && (
-          <div>
-            <h1 className="font-bold text-lg text-balance">KMRL DocIntel</h1>
-            <p className="text-xs text-muted-foreground">Document Intelligence</p>
-          </div>
+        {collapsed ? (
+          <img src="/images/docintel-logo.png" alt="DocIntel" width={28} height={28} className="rounded-md" />
+        ) : (
+          <>
+            <img src="/images/docintel-logo.png" alt="DocIntel" width={32} height={32} className="rounded-md" />
+            <div>
+              <h1 className="font-bold text-lg text-balance">DocIntel</h1>
+              <p className="text-xs text-muted-foreground">Intelligent Information</p>
+            </div>
+          </>
         )}
       </div>
 
@@ -89,7 +91,7 @@ export function Sidebar() {
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Pending Reviews</span>
-              <span className="font-medium text-warning">3</span>
+              <span className="font-medium">3</span>
             </div>
           </div>
         </div>
